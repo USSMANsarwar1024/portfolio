@@ -8,7 +8,7 @@ This site showcases my journey, skills, projects, and services as a Computer Sci
 
 ## Live Demo
 You can view the live portfolio here:  
-[**View Portfolio**]()  
+[**View Portfolio**](http://16.16.185.2:9090/)  
 
 ---
 
