@@ -1,842 +1,966 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skills | Usman Sarwar - DevOps Engineer</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Inherit all styles from index.html */
+    /* Base Styles and Variables */
     :root {
-      --primary-color: #6a0572;
-      --secondary-color: #0d1b2a;
-      --accent-color: #f9c80e;
-      --light-color: #f1f1f1;
-      --dark-color: #1a1a1a;
-      --gradient-main: linear-gradient(135deg, #6a0572, #ab83a1);
-      --transition: all 0.3s ease;
+      --primary-dark: #0a192f;
+      --secondary-dark: #112240;
+      --tertiary-dark: #233554;
+      --accent-teal: #64ffda;
+      --accent-blue: #57cbff;
+      --light-text: #ccd6f6;
+      --lighter-text: #a8b2d1;
+      --lightest-text: #e6f1ff;
+      --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --font-mono: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+      --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: "Montserrat", sans-serif;
-      color: var(--text-color);
+      font-family: var(--font-sans);
+      background-color: var(--primary-dark);
+      color: var(--light-text);
+      line-height: 1.6;
       overflow-x: hidden;
-      background-color: white;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      color: var(--secondary-color);
-    }
-
-    /* Skills Page Specific Styles */
-    .page-header {
-      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-      color: white;
-      padding: 120px 0 80px;
-      text-align: center;
-    }
-
-    .page-header h1 {
-      color: white;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .page-header p {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 1.2rem;
-    }
-
-    .skills-overview {
-      padding: 100px 0;
-      background: linear-gradient(#bfeff8ec, #e8c3d1);
-      color: #00113a;
-    }
-
-    .skills-visual {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    a {
+      color: var(--accent-teal);
+      text-decoration: none;
       transition: var(--transition);
     }
 
-    .skills-visual:hover {
-      transform: translateY(-10px);
+    a:hover {
+      color: var(--accent-blue);
     }
 
-    .skills-categories {
+    section {
       padding: 100px 0;
-      background: linear-gradient(135deg, #d9f7f5ca 0%, #fae0f5cd 100%);
     }
 
-    .category-title {
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--lightest-text);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    h1 {
+      font-size: clamp(40px, 8vw, 80px);
+    }
+
+    h2 {
+      font-size: clamp(30px, 5vw, 50px);
+    }
+
+    h3 {
+      font-size: clamp(20px, 3vw, 30px);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 18px;
+      color: var(--lighter-text);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .section-title {
       position: relative;
-      padding-left: 50px;
-      margin-bottom: 30px;
-      color: var(--primary-color);
+      margin-bottom: 60px;
     }
 
-    .category-icon {
+    .section-title h2 {
+      display: inline-block;
+    }
+
+    .section-title h2 span {
+      color: var(--accent-teal);
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent-teal);
+      margin-top: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: transparent;
+      color: var(--accent-teal);
+      border: 1px solid var(--accent-teal);
+      border-radius: 4px;
+      font-size: 16px;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: var(--transition);
+      outline: none;
+    }
+
+    .btn:hover {
+      background-color: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background-color: var(--accent-teal);
+      color: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-teal);
+      color: var(--primary-dark);
+      box-shadow: 0 10px 20px -10px rgba(100, 255, 218, 0.5);
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--primary-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #preloader .loader {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(100, 255, 218, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--accent-teal);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(10, 25, 47, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 20px 0;
+      transition: var(--transition);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 50px;
+      transition: var(--transition);
+    }
+
+    .nav-logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin: 0 15px;
+    }
+
+    .nav-menu a {
+      color: var(--light-text);
+      font-size: 16px;
+      font-family: var(--font-mono);
+      padding: 10px;
+      position: relative;
+    }
+
+    .nav-menu a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-teal);
+      transition: var(--transition);
+    }
+
+    .nav-menu a:hover::before {
+      width: 100%;
+    }
+
+    .nav-social a {
+      margin-left: 20px;
+      font-size: 18px;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--accent-teal);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Skills Header Section */
+    #skills-header {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .skills-header-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .skills-header-content h1 {
+      margin-bottom: 20px;
+    }
+
+    .skills-header-content p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* Skills Grid Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .skill-category {
+      background-color: var(--secondary-dark);
+      padding: 30px;
+      border-radius: 5px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    }
+
+    .skill-icon {
+      font-size: 40px;
+      color: var(--accent-teal);
+      margin-bottom: 20px;
+    }
+
+    .skill-category h3 {
+      margin-bottom: 15px;
+      color: var(--accent-teal);
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .skill-list li::before {
+      content: "▹";
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      text-align: center;
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: 50%;
+      color: var(--accent-teal);
     }
 
+    /* Skill Bars */
     .skill-item {
       margin-bottom: 25px;
     }
 
-    .skill-info {
+    .skill-header {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 8px;
-    }
-
-    .skill-name {
-      font-weight: 600;
-    }
-
-    .skill-percent {
-      color: var(--primary-color);
-      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .skill-bar {
-      height: 8px;
-      background-color: #e0e0e0;
-      border-radius: 4px;
+      height: 6px;
+      background-color: var(--tertiary-dark);
+      border-radius: 3px;
       overflow: hidden;
     }
 
     .skill-progress {
       height: 100%;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      background-color: var(--accent-teal);
+      border-radius: 3px;
+      position: relative;
       width: 0;
-      border-radius: 4px;
-      transition: width 1s ease;
+      transition: width 1.5s ease-in-out;
     }
 
-    .tools-section {
-      padding: 100px 0;
-      background: linear-gradient(135deg, #cee7949c 0%, #96e6a1d4 100%);
-      
-      
+    .skill-progress::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      animation: shimmer 2s infinite;
     }
 
-    .tool-item {
-      text-align: center;
-      padding: 30px 20px;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      transition: var(--transition);
-      margin-bottom: 30px;
-      height: 90%;
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
 
-    .tool-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .tool-item img {
-      height: 60px;
-      width: auto;
-      margin-bottom: 20px;
-      transition: var(--transition);
-    }
-
-    .tool-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .certifications-section {
-      padding: 100px 0;
-      background: linear-gradient(135deg, #c9f9ffa8 0%, #eff2d1 100%);
+    /* Certifications Section */
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
     }
 
     .certification-card {
-      background-color: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      background-color: var(--secondary-dark);
+      padding: 30px;
+      border-radius: 5px;
       transition: var(--transition);
-      height: 100%;
-      margin-bottom: 30px;
+      position: relative;
     }
 
     .certification-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
     }
 
-    .certification-image {
-      height: 200px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #f8f9fa;
+    .certification-icon {
+      font-size: 24px;
+      color: var(--accent-teal);
+      margin-bottom: 20px;
     }
 
-    .certification-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 20px;
-    }
-
-    .certification-content {
-      padding: 25px;
-    }
-
-    .certification-content h4 {
-      color: var(--primary-color);
-      margin-bottom: 10px;
-    }
-
-    .certification-content p {
-      color: #666;
-      font-weight: 500;
-      margin-bottom: 5px;
-    }
-
-    .certification-content .date {
-      display: block;
-      color: #888;
-      font-size: 0.9rem;
+    .certification-card h3 {
       margin-bottom: 15px;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 767.98px) {
-      .page-header h1 {
-        font-size: 2.5rem;
+    .certification-card p {
+      margin-bottom: 20px;
+    }
+
+    .certification-date {
+      color: var(--accent-teal);
+      font-family: var(--font-mono);
+      font-size: 14px;
+    }
+
+    /* CTA Section */
+    #cta {
+      background-color: var(--secondary-dark);
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      margin-bottom: 20px;
+    }
+
+    .cta-content p {
+      margin-bottom: 30px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--secondary-dark);
+      padding: 70px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-info h3 {
+      margin-bottom: 20px;
+    }
+
+    .footer-info p {
+      margin-bottom: 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-social a {
+      font-size: 20px;
+      color: var(--light-text);
+      transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+      color: var(--accent-teal);
+      transform: translateY(-3px);
+    }
+
+    .footer-links h4,
+    .footer-services h4,
+    .footer-contact h4 {
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h4::after,
+    .footer-services h4::after,
+    .footer-contact h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: var(--accent-teal);
+    }
+
+    .footer-links ul,
+    .footer-services ul,
+    .footer-contact ul {
+      list-style: none;
+    }
+
+    .footer-links li,
+    .footer-services li,
+    .footer-contact li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--lighter-text);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-teal);
+      padding-left: 5px;
+    }
+
+    .footer-services li,
+    .footer-contact li {
+      color: var(--lighter-text);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-bottom p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent-teal);
+      color: var(--primary-dark);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.8s;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .skills-grid,
+      .certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        background-color: var(--secondary-dark);
+        width: 80%;
+        height: calc(100vh - 80px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
       }
 
-      .page-header p {
-        font-size: 1rem;
+      .nav-menu.active {
+        right: 0;
       }
 
-      .category-title {
-        font-size: 1.5rem;
+      .nav-menu li {
+        margin: 15px 0;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-social {
+        display: none;
+      }
+
+      .skills-grid,
+      .certifications-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
-
 <body>
   <!-- Preloader -->
-  <div class="preloader">
+  <div id="preloader">
     <div class="loader"></div>
   </div>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="refrences/img-2.png" alt="DevOps Logo" style="width: 100px; max-width: 100%" />
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="skills.html">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="projects.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-
-        <div class="d-flex align-items-center">
-          <a href="https://www.linkedin.com/in/usman-sarwar-a69b70332" class="btn btn-outline-primary me-2"
-            target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/USSMANsarwar1024" class="btn btn-outline-primary" target="_blank"
-            rel="noopener noreferrer" style="margin-right: 20px;">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
+  <nav>
+    <div class="container">
+      <div class="nav-logo">
+        <a href="index.html"><img src="refrences/img-2.png" alt="Usman Sarwar" style="height: 50px;"></a>
       </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="https://github.com/USSMANsarwar1024" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/usman-sarwar-a69b70332" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/USMANSARWAR4028" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+      <button class="nav-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </nav>
 
-  <!-- Page Header -->
-  <section class="page-header">
+  <!-- Skills Header Section -->
+  <section id="skills-header">
     <div class="container">
-      <div class="row">
-        <div class="col-12" data-aos="fade-up">
-          <h1>My Skills</h1>
-          <p>Technologies and methodologies I work with</p>
+      <div class="skills-header-content fade-in">
+        <h1>Technical Skills</h1>
+        <p>My expertise in DevOps, cloud technologies, and software development</p>
+        <a href="#skills-content" class="btn btn-primary">Explore Skills</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Content Section -->
+  <section id="skills-content">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Technical <span>Expertise</span></h2>
+      </div>
+      
+      <div class="skills-grid">
+        <div class="skill-category fade-in">
+          <div class="skill-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3>Cloud & DevOps</h3>
+          <ul class="skill-list">
+            <li>AWS (EC2, S3, RDS, Lambda)</li>
+            <li>Docker & Containerization</li>
+            <li>Kubernetes & Orchestration</li>
+            <li>CI/CD Pipelines (Jenkins, GitLab)</li>
+            <li>Infrastructure as Code (Terraform)</li>
+            <li>Serverless Architecture</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category fade-in delay-1">
+          <div class="skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Programming</h3>
+          <ul class="skill-list">
+            <li>Python (Django, Flask)</li>
+            <li>JavaScript (React, Node.js)</li>
+            <li>Java (Spring Boot)</li>
+            <li>Bash/Shell Scripting</li>
+            <li>SQL & Database Management</li>
+            <li>RESTful API Development</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category fade-in delay-2">
+          <div class="skill-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Infrastructure & Tools</h3>
+          <ul class="skill-list">
+            <li>Linux/Unix Administration</li>
+            <li>Networking & Security</li>
+            <li>Monitoring (Prometheus, Grafana)</li>
+            <li>Logging (ELK Stack)</li>
+            <li>Version Control (Git)</li>
+            <li>Agile/Scrum Methodologies</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Overview -->
-  <section class="skills-overview">
+  <!-- Skill Proficiency Section -->
+  <section id="skill-proficiency">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6" data-aos="fade-right">
-          <div class="section-title">
-            <h2>Technical <span>Expertise</span></h2>
-            <p class="subtitle">Where I <span style="font-weight: bold;">Excel</span></p>
-          </div>
-          <p>
-            With a strong foundation in computer science and hands-on experience across the
-            development lifecycle, I bridge the gap between software development and operations.
-            My skills span from writing clean, efficient code to automating infrastructure
-            and optimizing deployment pipelines.
-          </p>
-          <p>
-            Proactive student at UMT (CGPA 3.87),
-            passionate about DevOps, Cloud
-            Engineering, and Web Development.
-            I build, break, and learn weekly.
-            I believe in curiosity, velocity, and turning
-            ideas into actions.
-          </p>
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <div class="skills-visual">
-            <img src="refrences/skills.png"
-              onerror="this.onerror=null; this.src='https://placehold.co/600x400/5D0360/FFC107?text=Skills+Visualization';"
-              alt="Skills Visualization" class="img-fluid" style="width: 100%;" />
-          </div>
-        </div>
+      <div class="section-title text-center">
+        <h2>Skill <span>Proficiency</span></h2>
       </div>
-    </div>
-  </section>
-
-  <!-- Skills by Category -->
-  <section class="skills-categories">
-    <div class="container">
-      <div class="section-title center" data-aos="fade-up">
-        <h2>Skills <span>Breakdown</span></h2>
-        <p class="subtitle">By category and proficiency</p>
-      </div>
-
-      <!-- DevOps Skills -->
-      <div class="skills-category" data-aos="fade-up">
-        <h3 class="category-title">
-          <i class="fas fa-server category-icon"></i>
-          DevOps & Cloud
-        </h3>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Jenkins</span>
-                <span class="skill-percent">75%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="75"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Docker </span>
-                <span class="skill-percent">88%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="88"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">AWS Cloud Services</span>
-                <span class="skill-percent">70%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="70"></div>
-              </div>
-            </div>
+      
+      <div class="skills-list">
+        <div class="skill-item fade-in">
+          <div class="skill-header">
+            <h4>AWS Cloud Services</h4>
+            <span>90%</span>
           </div>
-          <div class="col-md-6">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Infrastructure as Code</span>
-                <span class="skill-percent">67%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="67"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Apache Tomcat</span>
-                <span class="skill-percent">80%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="80"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Cloud Native</span>
-                <span class="skill-percent">75%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="75"></div>
-              </div>
-            </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90%"></div>
           </div>
         </div>
-      </div>
-
-      <br>
-      <!-- Development Skills -->
-      <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="category-title">
-          <i class="fas fa-code category-icon"></i>
-          Development
-        </h3>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">JavaScript</span>
-                <span class="skill-percent">72%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="72"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Html/Css</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="85"></div>
-              </div>
-            </div>
-
+        
+        <div class="skill-item fade-in delay-1">
+          <div class="skill-header">
+            <h4>Docker & Kubernetes</h4>
+            <span>85%</span>
           </div>
-          <div class="col-md-6">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Database Systems</span>
-                <span class="skill-percent">86%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="86"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">C/C++</span>
-                <span class="skill-percent">90%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="90"></div>
-              </div>
-            </div>
-
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85%"></div>
           </div>
         </div>
-
-        <br>
-        <!-- Other Skills -->
-        <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="category-title">
-            <i class="fas fa-cogs category-icon"></i>
-            Other Technical Skills
-          </h3>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Linux (Debian / Ubuntu)</span>
-                  <span class="skill-percent">80%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-width="80"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Shell Scripting</span>
-                  <span class="skill-percent">70%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-width="70"></div>
-                </div>
-              </div>
-
-            </div>
-            <div class="col-md-6">
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Git / Github</span>
-                  <span class="skill-percent">75%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-width="75"></div>
-                </div>
-              </div>
-              <div class="skill-item">
-                <div class="skill-info">
-                  <span class="skill-name">Agile Methodologies</span>
-                  <span class="skill-percent">87%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" data-width="87"></div>
-                </div>
-              </div>
-
-            </div>
+        
+        <div class="skill-item fade-in delay-2">
+          <div class="skill-header">
+            <h4>Python Development</h4>
+            <span>88%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="88%"></div>
           </div>
         </div>
-  </section>
-
-  <!-- Tools & Technologies -->
-  <section class="tools-section">
-    <div class="container">
-      <div class="section-title center" data-aos="fade-up">
-        <h2>Tools and <span>Technologies</span></h2>
-        <p class="subtitle">I work with daily</p>
-      </div>
-      <div class="row">
-        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="tool-item">
-            <img src="refrences/project_3.png" alt="AWS" class="img-fluid">
-            <h4>AWS</h4>
+        
+        <div class="skill-item fade-in delay-3">
+          <div class="skill-header">
+            <h4>CI/CD Pipelines</h4>
+            <span>82%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="82%"></div>
           </div>
         </div>
-        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-          <div class="tool-item">
-            <img src="refrences/project_2.PNG" alt="Docker" class="img-fluid">
-            <h4>Docker</h4>
+        
+        <div class="skill-item fade-in delay-4">
+          <div class="skill-header">
+            <h4>Terraform & IaC</h4>
+            <span>80%</span>
           </div>
-        </div>
-        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="tool-item">
-            <img src="refrences/kubernetes.svg" alt="Kubernetes" class="img-fluid">
-            <h4>Kubernetes</h4>
-          </div>
-        </div>
-        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
-          <div class="tool-item">
-            <img src="refrences/terraform.png" alt="Terraform" class="img-fluid">
-            <h4>Terraform</h4>
-          </div>
-        </div>
-        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="tool-item">
-            <img src="refrences/jenkins.png" alt="Node.js" class="img-fluid">
-            <h4>Jenkins</h4>
-          </div>
-        </div>
-        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-          <div class="tool-item">
-            <img src="refrences/cloud-native.webp" alt="React" class="img-fluid">
-            <h4>Cloud Native</h4>
-          </div>
-        </div>
-        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="tool-item">
-            <img src="refrences/tomcat.png" alt="Python" class="img-fluid">
-            <h4>Apache Tomcat</h4>
-          </div>
-        </div>
-        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="400">
-          <div class="tool-item">
-            <img src="refrences/git.webp" alt="Git" class="img-fluid">
-            <h4>Git/Github</h4>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="80%"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications -->
-  <!-- <section class="certifications-section">
+  <!-- Certifications Section -->
+  <section id="certifications">
     <div class="container">
-      <div class="section-title center" data-aos="fade-up">
+      <div class="section-title text-center">
         <h2>Certifications & <span>Achievements</span></h2>
-        <p class="subtitle">Formal recognition of my skills</p>
       </div>
-      <div class="row">
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="certification-card">
-            <div class="certification-image">
-              <img src="refrences/aws-certified.png" alt="AWS Certified Solutions Architect" class="img-fluid">
-            </div>
-            <div class="certification-content">
-              <h4>AWS Certified Solutions Architect - Associate</h4>
-              <p>Amazon Web Services</p>
-              <span class="date">Issued: June 2023</span>
-              <a href="#" class="btn btn-sm btn-outline">View Credential</a>
-            </div>
+      
+      <div class="certifications-grid">
+        <div class="certification-card fade-in">
+          <div class="certification-icon">
+            <i class="fas fa-award"></i>
           </div>
+          <h3>AWS Certified Solutions Architect</h3>
+          <p>Designing and deploying scalable systems on AWS</p>
+          <span class="certification-date">Issued: May 2023</span>
         </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="certification-card">
-            <div class="certification-image">
-              <img src="refrences/cka-certified.png" alt="Certified Kubernetes Administrator" class="img-fluid">
-            </div>
-            <div class="certification-content">
-              <h4>Certified Kubernetes Administrator (CKA)</h4>
-              <p>Cloud Native Computing Foundation</p>
-              <span class="date">Issued: March 2023</span>
-              <a href="#" class="btn btn-sm btn-outline">View Credential</a>
-            </div>
+        
+        <div class="certification-card fade-in delay-1">
+          <div class="certification-icon">
+            <i class="fas fa-award"></i>
           </div>
+          <h3>Certified Kubernetes Administrator (CKA)</h3>
+          <p>Managing production-grade Kubernetes clusters</p>
+          <span class="certification-date">Issued: March 2023</span>
         </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="certification-card">
-            <div class="certification-image">
-              <img src="refrences/terraform-certified.png" alt="HashiCorp Certified: Terraform Associate"
-                class="img-fluid">
-            </div>
-            <div class="certification-content">
-              <h4>HashiCorp Certified: Terraform Associate</h4>
-              <p>HashiCorp</p>
-              <span class="date">Issued: January 2023</span>
-              <a href="#" class="btn btn-sm btn-outline">View Credential</a>
-            </div>
+        
+        <div class="certification-card fade-in delay-2">
+          <div class="certification-icon">
+            <i class="fas fa-award"></i>
           </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="certification-card">
-            <div class="certification-image">
-              <img src="refrences/google-cloud-certified.png" alt="Google Cloud Associate Engineer" class="img-fluid">
-            </div>
-            <div class="certification-content">
-              <h4>Google Cloud Associate Engineer</h4>
-              <p>Google Cloud</p>
-              <span class="date">Issued: November 2022</span>
-              <a href="#" class="btn btn-sm btn-outline">View Credential</a>
-            </div>
-          </div>
+          <h3>Docker Certified Associate</h3>
+          <p>Containerization and Docker ecosystem mastery</p>
+          <span class="certification-date">Issued: January 2023</span>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
+  <section id="cta">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8" data-aos="fade-right">
-          <h2>Ready to leverage my skills for your project?</h2>
-          <p>
-            Whether you need DevOps solutions, cloud architecture, or custom software development,
-            I'm here to help bring your ideas to life with technical excellence.
-          </p>
-        </div>
-        <div class="col-lg-4 text-lg-end" data-aos="fade-left">
-          <a href="contact.html" class="btn btn-light">Get In Touch</a>
-        </div>
+      <div class="cta-content fade-in">
+        <h2>Interested in working together?</h2>
+        <p>I'm always open to discussing new projects and opportunities. Let's connect and create something amazing.</p>
+        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-5 mb-lg-0">
-          <h3 class="footer-title">Usman Sarwar</h3>
-          <p>
-            Computer Science student specializing in DevOps and software
-            development, passionate about building efficient, scalable
-            solutions.
-          </p>
-          <div class="social-icons mt-4">
-            <a href="https://github.com/USSMANsarwar1024" target="_blank" rel="noopener noreferrer"><i
-                class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/usman-sarwar-a69b70332" target="_blank" rel="noopener noreferrer"><i
-                class="fab fa-linkedin-in"></i></a>
-            <a href="https://x.com/USMANSARWAR4028" target="_blank" rel="noopener noreferrer"><i
-                class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/us.maan2023?igsh=MTBxenc5ZDE5bW0zcA==" target="_blank" rel="noopener noreferrer"><i
-                class="fab fa-instagram"></i></a>
+      <div class="footer-grid">
+        <div class="footer-info">
+          <h3>Usman Sarwar</h3>
+          <p>A passionate DevOps Engineer and Cloud Specialist focused on building efficient and scalable infrastructure solutions.</p>
+          <div class="footer-social">
+            <a href="https://github.com/USSMANsarwar1024" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/usman-sarwar-a69b70332" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/USMANSARWAR4028" target="_blank"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-          <div class="footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="skills.html">Skills</a></li>
-              <li><a href="projects.html">Projects</a></li>
-            </ul>
-          </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-          <div class="footer-links">
-            <h4>Services</h4>
-            <ul>
-              <li>DevOps</a></li>
-              <li>Web Development</a></li>
-              <li>Cloud Solutions</a></li>
-              <li>Consulting</a></li>
-            </ul>
-          </div>
+        
+        <div class="footer-services">
+          <h4>Services</h4>
+          <ul>
+            <li>DevOps Consulting</li>
+            <li>Cloud Infrastructure</li>
+            <li>CI/CD Implementation</li>
+            <li>Containerization</li>
+            <li>Automation Solutions</li>
+          </ul>
         </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="footer-links">
-            <h4>Contact Info</h4>
-            <ul>
-              <li>
-                <i class="fas fa-map-marker-alt me-2"></i> Lahore, Pakistan
-              </li>
-              <li><i class="fas fa-phone me-2"></i>+92-308-1036864</li>
-              <li>
-                <i class="fas fa-envelope me-2"></i> usmansarwar4028@gmail.com
-              </li>
-            </ul>
-          </div>
+        
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> usmansarwar1024@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Pakistan</li>
+          </ul>
         </div>
       </div>
-      <div class="copyright">
-        <p>&copy; 2025 Usman Sarwar. All rights reserved.</p>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 Usman Sarwar. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
   <!-- Back to Top -->
-  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
-  <!-- Scripts -->
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- Anime.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <!-- Custom JS -->
+  <!-- JavaScript -->
   <script>
     // Preloader
-    window.addEventListener("load", function () {
-      const preloader = document.querySelector(".preloader");
-      preloader.style.opacity = "0";
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
       setTimeout(() => {
-        preloader.style.display = "none";
-      }, 500);
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500);
+      }, 1000);
     });
 
-    // Navbar scroll effect
-    window.addEventListener("scroll", function () {
-      const navbar = document.querySelector(".navbar");
-      const backToTop = document.querySelector(".back-to-top");
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
 
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
-        backToTop.classList.add("active");
+        backToTop.classList.add('active');
       } else {
-        backToTop.classList.remove("active");
+        backToTop.classList.remove('active');
       }
     });
 
-    // Initialize AOS animation
-    AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
-      once: true,
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        if (targetId === "#") return;
-
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
 
-    // Back to top button
-    document
-      .querySelector(".back-to-top")
-      .addEventListener("click", function (e) {
-        e.preventDefault();
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.skill-progress');
 
-    // Animate skill bars when scrolled into view
-    const skillBars = document.querySelectorAll(".skill-progress");
-
-    const animateSkillBars = () => {
-      skillBars.forEach((bar) => {
-        const rect = bar.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          const width = bar.getAttribute("data-width");
-          anime({
-            targets: bar,
-            width: width + "%",
-            duration: 1500,
-            easing: "easeInOutQuad",
-            delay: anime.stagger(100),
-          });
+    function animateSkillBars() {
+      skillBars.forEach(bar => {
+        const barPosition = bar.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (barPosition < screenPosition) {
+          const width = bar.getAttribute('data-width');
+          bar.style.width = width;
         }
       });
-    };
+    }
 
-    // Run once on load and then on scroll
-    animateSkillBars();
-    window.addEventListener("scroll", animateSkillBars);
+    window.addEventListener('scroll', animateSkillBars);
+
+    // Fade in elements on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    function checkFade() {
+      fadeElements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (elementPosition < screenPosition) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkFade);
+    
+    // Initial call to set up animations
+    window.addEventListener('load', () => {
+      animateSkillBars();
+      checkFade();
+    });
   </script>
 </body>
-
 </html>
