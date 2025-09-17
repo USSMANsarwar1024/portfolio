@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +54,12 @@
       padding: 100px 0;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       color: var(--lightest-text);
       margin-bottom: 1rem;
       font-weight: 600;
@@ -138,33 +144,6 @@
       background-color: var(--accent-teal);
       color: var(--primary-dark);
       box-shadow: 0 10px 20px -10px rgba(100, 255, 218, 0.5);
-    }
-
-    /* Preloader */
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--primary-dark);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    #preloader .loader {
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(100, 255, 218, 0.3);
-      border-radius: 50%;
-      border-top-color: var(--accent-teal);
-      animation: spin 1s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
     }
 
     /* Navigation */
@@ -464,8 +443,13 @@
     }
 
     @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
     }
 
     /* Timeline Section */
@@ -711,8 +695,15 @@
 
     /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .fade-in {
@@ -822,31 +813,25 @@
     }
   </style>
 </head>
-<body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="loader"></div>
-  </div>
 
+<body>
   <!-- Navigation -->
   <nav>
     <div class="container">
       <div class="nav-logo">
-        <a href="#"><img src="https://via.placeholder.com/150x50?text=U.Sarwar" alt="Usman Sarwar"></a>
+        <a href=""><img src="refrences/devops.png" alt="Home"></a>
       </div>
       <ul class="nav-menu">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#timeline">Experience</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#cta">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-social">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/USSMANsarwar1024"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/usman-sarwar-a69b70332"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/USMANSARWAR4028"><i class="fab fa-twitter"></i></a>
       </div>
       <button class="nav-toggle">
         <i class="fas fa-bars"></i>
@@ -861,20 +846,20 @@
         <div class="hero-text">
           <h1>Usman Sarwar</h1>
           <div class="subtitle">DevOps & Cloud Engineer</div>
-          <p>I design, build, and maintain highly available, scalable, and secure cloud infrastructure that powers modern applications and accelerates business growth.</p>
+          <p>I design, build, and maintain highly available, scalable, and secure cloud infrastructure that powers
+            modern applications and accelerates business growth.</p>
           <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#cta" class="btn">Get In Touch</a>
+            <a href="projects.html" class="btn btn-primary">View My Work</a>
+            <a href="contact.html" class="btn">Get In Touch</a>
           </div>
           <div class="hero-social">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-dev"></i></a>
+            <a href="https://github.com/USSMANsarwar1024"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/usman-sarwar-a69b70332"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/USMANSARWAR4028"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
         <div class="hero-image">
-          <img src="https://via.placeholder.com/400x500?text=Professional+Photo" alt="Usman Sarwar">
+          <img src="refrences/Usman Sarwar.png" alt="Usman Sarwar">
         </div>
       </div>
     </div>
@@ -906,15 +891,10 @@
             <i class="fas fa-server"></i>
           </div>
           <h3>Infrastructure as Code</h3>
-          <p>Infrastructure management using Terraform, Ansible, and CloudFormation for consistency and reproducibility.</p>
+          <p>Infrastructure management using Terraform, Ansible, and CloudFormation for consistency and reproducibility.
+          </p>
         </div>
-        <div class="service-card fade-in delay-3">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>DevSecOps</h3>
-          <p>Integrating security practices into DevOps workflows with automated security testing and compliance.</p>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -923,7 +903,8 @@
   <section id="projects">
     <div class="container">
       <div class="section-title text-center">
-        <h2>Recent <span>Projects</span></h2>
+        <h2>Featured <span>Projects</span></h2>
+        <!-- <p class="subtitle">A selection of my recent work</p> -->
       </div>
       <div class="projects-grid">
         <div class="project-card fade-in">
@@ -931,9 +912,9 @@
             <img src="https://via.placeholder.com/600x400?text=Cloud+Migration" alt="Cloud Migration Project">
           </div>
           <div class="project-info">
-            <h3>Enterprise Cloud Migration</h3>
-            <p>Migrated 50+ services from on-prem to AWS with zero downtime and 30% cost reduction.</p>
-            <a href="#">View Case Study <i class="fas fa-arrow-right"></i></a>
+            <h3>Zephyr Lux</h3>
+            <p>This website serves as the digital storefront and customer hub for Zephyr Lux, offering a seamless shopping experience for perfume lovers.</p>
+            <a href="https://github.com/USSMANsarwar1024/Zephyr-Luxe.git">View Case Study <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <div class="project-card fade-in delay-1">
@@ -941,9 +922,9 @@
             <img src="https://via.placeholder.com/600x400?text=K8s+Cluster" alt="Kubernetes Project">
           </div>
           <div class="project-info">
-            <h3>Kubernetes Orchestration</h3>
-            <p>Designed and implemented a highly available K8s cluster serving 1000+ containers daily.</p>
-            <a href="#">View Case Study <i class="fas fa-arrow-right"></i></a>
+            <h3>Docker Deployment</h3>
+            <p>Designed and Dockerized Jenkins and Tomcat with the goal of setting up a Continuous Integration/ Continuous Deployment (CI/CD) pipeline.</p>
+            <a href="https://drive.google.com/drive/folders/1GqEOuI3HNT9IvpZs-VADNjjiapIsPOm4?usp=drive_link">View Case Study <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
         <div class="project-card fade-in delay-2">
@@ -951,14 +932,14 @@
             <img src="https://via.placeholder.com/600x400?text=CI/CD+Pipeline" alt="CI/CD Pipeline">
           </div>
           <div class="project-info">
-            <h3>Automated CI/CD System</h3>
-            <p>Built a comprehensive CI/CD pipeline reducing deployment time from days to minutes.</p>
-            <a href="#">View Case Study <i class="fas fa-arrow-right"></i></a>
+            <h3>Deployment on AWS</h3>
+            <p>Built a comprehensive CI/CD pipeline to deploy to multiple instances for Automation, Speed, Consistency and Reliability.</p>
+            <a href="https://drive.google.com/drive/folders/1MYXfHUI1ci5Lsd9kEik6KuDnhxU8yLTq?usp=sharing">View Case Study <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="projects-cta">
-        <a href="#" class="btn">View All Projects</a>
+        <a href="https://drive.google.com/drive/folders/1Xv0or5C1bYOaUGOvdMfdjun0twh2eBx5?usp=drive_link" class="btn">View All Projects</a>
       </div>
     </div>
   </section>
@@ -973,58 +954,58 @@
         <div class="skills-column fade-in">
           <div class="skill-item">
             <div class="skill-header">
-              <h3>AWS</h3>
-              <span>95%</span>
+              <h3>Apache Tomcat</h3>
+              <span>80%</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-width="95%"></div>
+              <div class="skill-progress" data-width="80%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-header">
-              <h3>Kubernetes</h3>
-              <span>90%</span>
+              <h3>Jenkins</h3>
+              <span>75%</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-width="90%"></div>
+              <div class="skill-progress" data-width="75%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-header">
-              <h3>Terraform</h3>
-              <span>92%</span>
+              <h3>Docker</h3>
+              <span>60%</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-width="92%"></div>
+              <div class="skill-progress" data-width="60%"></div>
             </div>
           </div>
         </div>
         <div class="skills-column fade-in delay-1">
           <div class="skill-item">
             <div class="skill-header">
-              <h3>Docker</h3>
-              <span>93%</span>
+              <h3>Amazon Web Services</h3>
+              <span>70%</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-width="93%"></div>
+              <div class="skill-progress" data-width="70%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-header">
-              <h3>Jenkins</h3>
-              <span>88%</span>
+              <h3>Cloud Native</h3>
+              <span>75%</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-width="88%"></div>
+              <div class="skill-progress" data-width="75%"></div>
             </div>
           </div>
           <div class="skill-item">
             <div class="skill-header">
-              <h3>Python</h3>
-              <span>85%</span>
+              <h3>Kubernetes</h3>
+              <span>60%</span>
             </div>
             <div class="skill-bar">
-              <div class="skill-progress" data-width="85%"></div>
+              <div class="skill-progress" data-width="60%"></div>
             </div>
           </div>
         </div>
@@ -1040,29 +1021,33 @@
       </div>
       <div class="timeline">
         <div class="timeline-item fade-in">
-          <div class="timeline-date">2021 - Present</div>
+          <div class="timeline-date">2023 - Present</div>
           <div class="timeline-content">
-            <h3>Senior DevOps Engineer</h3>
-            <h4>Tech Solutions Inc.</h4>
-            <p>Lead DevOps initiatives for multiple product teams, implementing infrastructure as code and CI/CD best practices.</p>
-          </div>
-        </div>
-        <div class="timeline-item fade-in delay-1">
-          <div class="timeline-date">2019 - 2021</div>
-          <div class="timeline-content">
-            <h3>DevOps Engineer</h3>
-            <h4>Cloud Innovations</h4>
-            <p>Designed and maintained cloud infrastructure on AWS, reducing costs by 25% while improving system reliability.</p>
+            <h3>Computer Science Student</h3>
+            <!-- <h4>Tech Solutions Inc.</h4> -->
+            <p>Currently pursuing my degree in Computer Science with a focus on
+              DevOps, Web development and Cloud technologies.</p>
           </div>
         </div>
         <div class="timeline-item fade-in delay-2">
-          <div class="timeline-date">2017 - 2019</div>
+          <div class="timeline-date">Fall - 2024</div>
           <div class="timeline-content">
-            <h3>Systems Administrator</h3>
-            <h4>Data Systems Ltd.</h4>
-            <p>Managed on-premise infrastructure and began cloud migration initiatives to AWS and Azure.</p>
+            <h3>DevOps Projects</h3>
+            <!-- <h4>Data Systems Ltd.</h4> -->
+            <p>Worked on implementing CI/CD pipelines and containerization
+              solutions for enterprise level applications.</p>
           </div>
         </div>
+        <div class="timeline-item fade-in delay-1">
+          <div class="timeline-date">Spring - 2025</div>
+          <div class="timeline-content">
+            <h3>Cloud Engineering</h3>
+            <!-- <h4>Cloud Innovations</h4> -->
+            <p>Designed and implemented cloud infrastructure solutions for
+              various clients on AWS platform.</p>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
@@ -1079,13 +1064,16 @@
             <i class="fas fa-quote-left"></i>
           </div>
           <div class="testimonial-content">
-            <p>"Usman transformed our infrastructure with his DevOps expertise. Our deployment process went from error-prone manual steps to a fully automated pipeline."</p>
+            <p>"Usman Sarwar transformed our deployment process with their
+                DevOps expertise. What used to take hours now happens
+                automatically with zero downtime. Their attention to detail
+                and problem-solving skills are exceptional."</p>
           </div>
           <div class="testimonial-author">
-            <img src="https://via.placeholder.com/100?text=J.D." alt="John Doe">
+            <img src="refrences/client-1.jpg" alt="Client - 1">
             <div class="author-info">
-              <h4>John Doe</h4>
-              <p>CTO, TechCorp</p>
+              <h4>Bakir Raza</h4>
+              <p>CTO, Startup Inc.</p>
             </div>
           </div>
         </div>
@@ -1094,13 +1082,16 @@
             <i class="fas fa-quote-left"></i>
           </div>
           <div class="testimonial-content">
-            <p>"The cloud migration led by Usman was seamless. He delivered on time and within budget, with excellent documentation and knowledge transfer."</p>
+            <p>"Working with Usman Sarwar on our cloud migration was a
+                game-changer. They not only implemented the technical solution
+                but also documented everything thoroughly and trained our
+                team. Highly recommended!"</p>
           </div>
           <div class="testimonial-author">
-            <img src="https://via.placeholder.com/100?text=S.M." alt="Sarah Miller">
+            <img src="refrences/client-2.png" alt="Client 2">
             <div class="author-info">
-              <h4>Sarah Miller</h4>
-              <p>Director of Engineering, InnovateCo</p>
+              <h4>Sarah Johnson</h4>
+              <p>Director of Engineering, Startup Co.</p>
             </div>
           </div>
         </div>
@@ -1109,13 +1100,14 @@
             <i class="fas fa-quote-left"></i>
           </div>
           <div class="testimonial-content">
-            <p>"Usman's implementation of Kubernetes dramatically improved our application's scalability and reduced our infrastructure costs by 40%."</p>
+            <p>"Usman Sarwar's implementation of Kubernetes dramatically improved our application's scalability and reduced our
+              infrastructure costs by 40%."</p>
           </div>
           <div class="testimonial-author">
-            <img src="https://via.placeholder.com/100?text=M.J." alt="Michael Johnson">
+            <img src="refrences/client - 3.jpg" alt="client - 3">
             <div class="author-info">
               <h4>Michael Johnson</h4>
-              <p>Product Manager, StartupXYZ</p>
+              <p>Product Manager, Startup</p>
             </div>
           </div>
         </div>
@@ -1128,8 +1120,9 @@
     <div class="container">
       <div class="cta-content fade-in">
         <h2>Let's Work Together</h2>
-        <p>I'm currently available for freelance opportunities and select full-time positions. If you have a project that you want to get started or think you need my help with something, then get in touch.</p>
-        <a href="mailto:usman@example.com" class="btn btn-primary">Contact Me</a>
+        <p>I'm currently available for freelance opportunities and select full-time positions. If you have a project
+          that you want to get started or think you need my help with something, then get in touch.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Me</a>
       </div>
     </div>
   </section>
@@ -1140,63 +1133,54 @@
       <div class="footer-grid">
         <div class="footer-info">
           <h3>Usman Sarwar</h3>
-          <p>DevOps & Cloud Engineer with a passion for building scalable, reliable infrastructure that enables teams to deliver value faster.</p>
+          <p>DevOps & Cloud Engineer with a passion for building scalable, reliable infrastructure that enables teams to
+            deliver value.</p>
           <div class="footer-social">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-dev"></i></a>
+            <a href="https://github.com/USSMANsarwar1024"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/usman-sarwar-a69b70332"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/USMANSARWAR4028"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/us.maan2023?igsh=MTBxenc5ZDE5bW0zcA=="><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#timeline">Experience</a></li>
+                          <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="skills.html">Services</a></li>
+              <li><a href="projects.html">Projects</a></li>
           </ul>
         </div>
         <div class="footer-services">
           <h4>Services</h4>
           <ul>
+            <li>DevOps</a></li>
             <li>Cloud Infrastructure</li>
             <li>CI/CD Pipelines</li>
-            <li>Infrastructure as Code</li>
-            <li>DevSecOps</li>
-            <li>Consulting</li>
+              <li>Web Development</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h4>Contact</h4>
-          <ul>
-            <li><i class="fas fa-envelope"></i> usman@example.com</li>
-            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-            <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+          <ul style="display: flex; flex-direction: column; gap: 8px;">
+            <li><i class="fas fa-envelope"></i> usmansarwar4028@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +92-308-1036864</li>
+            <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2023 Usman Sarwar. All Rights Reserved.</p>
+        <p>&copy; 2025 Usman Sarwar. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    // Preloader
-    window.addEventListener('load', () => {
-      const preloader = document.getElementById('preloader');
-      preloader.style.opacity = '0';
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 500);
-    });
 
     // Navigation toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
@@ -1210,37 +1194,37 @@
 
     // Scroll animations
     const fadeElements = document.querySelectorAll('.fade-in');
-    
+
     const fadeInOnScroll = () => {
       fadeElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
-        
+
         if (elementTop < window.innerHeight - elementVisible) {
           element.style.opacity = '1';
           element.style.transform = 'translateY(0)';
         }
       });
     };
-    
+
     window.addEventListener('scroll', fadeInOnScroll);
     // Trigger once on load
     fadeInOnScroll();
 
     // Animate skill bars
     const skillBars = document.querySelectorAll('.skill-progress');
-    
+
     const animateSkillBars = () => {
       skillBars.forEach(bar => {
         const width = bar.getAttribute('data-width');
         const elementTop = bar.getBoundingClientRect().top;
-        
+
         if (elementTop < window.innerHeight - 100) {
           bar.style.width = width;
         }
       });
     };
-    
+
     window.addEventListener('scroll', animateSkillBars);
     // Trigger once on load
     setTimeout(animateSkillBars, 500);
@@ -1258,4 +1242,5 @@
     });
   </script>
 </body>
+
 </html>
