@@ -258,6 +258,7 @@
     }
 
     .hero-text h1 {
+      margin-top: 8rem;
       margin-bottom: 20px;
     }
 
@@ -736,6 +737,36 @@
     .footer-bottom p {
       font-size: 14px;
       margin: 0;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--accent-teal);
+      color: var(--primary-dark);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 999;
+    }
+
+    .back-to-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
     }
 
     /* Animations */
@@ -1261,6 +1292,11 @@
     </div>
   </footer>
 
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
   <script>
 
     // Navigation toggle
@@ -1325,6 +1361,22 @@
         nav.style.padding = '10px 0';
         nav.style.boxShadow = 'none';
       }
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('active');
+      } else {
+        backToTop.classList.remove('active');
+      }
+    });
+
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
