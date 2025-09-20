@@ -265,9 +265,11 @@
     }
 
     .skills-visual {
-      border-radius: 10px;
+      border-radius: 35px;
       overflow: hidden;
       box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+      width: 80%;
+      margin-left: 4rem;
       transition: var(--transition);
     }
 
@@ -284,6 +286,7 @@
       position: relative;
       padding-left: 50px;
       margin-bottom: 30px;
+      margin-top: 30px;
       color: var(--accent-teal);
     }
 
@@ -309,7 +312,7 @@
     .skill-info {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .skill-name {
@@ -386,7 +389,6 @@
       width: auto;
       margin-bottom: 20px;
       transition: var(--transition);
-      filter: grayscale(100%) brightness(80%);
     }
 
     .tool-item:hover img {
@@ -458,21 +460,50 @@
       font-family: var(--font-mono);
     }
 
+    /* CTA Section */
     .cta-section {
-      padding: 100px 0;
-      background-color: var(--secondary-dark);
-      text-align: center;
+      padding: 80px 0;
+      background-color: var(--accent-teal);
+      color: var(--primary-dark);
+    }
+
+    .cta-section .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .cta-section .col-lg-8 {
+      width: 66.66%;
+      padding: 0 15px;
+    }
+
+    .cta-section .col-lg-4 {
+      width: 33.33%;
+      padding: 0 15px;
+      text-align: right;
     }
 
     .cta-section h2 {
+      color: var(--primary-dark);
       margin-bottom: 20px;
     }
 
     .cta-section p {
-      margin-bottom: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      color: var(--primary-dark);
+      margin-bottom: 0;
+    }
+
+    .btn-light {
+      background-color: var(--primary-dark);
+      color: var(--accent-teal);
+      border: 1px solid var(--primary-dark);
+    }
+
+    .btn-light:hover {
+      background-color: var(--primary-dark);
+      color: var(--accent-teal);
+      box-shadow: 0 10px 20px -10px rgba(10, 25, 47, 0.5);
     }
 
     /* Footer */
@@ -608,6 +639,12 @@
       transform: translateY(-5px);
     }
 
+    .subtitle {
+    color: var(--accent-teal);
+    font-size: 22px;
+    font-weight: 400;
+}
+
     /* Animations */
     @keyframes fadeIn {
       from {
@@ -707,7 +744,7 @@
     <div class="container">
       <div class="text-center fade-in">
         <h1>My Skills</h1>
-        <p>Technologies and methodologies I work with</p>
+        <p style="color: var(--accent-teal);font-size: 22px;font-weight: 400;">Technologies and methodologies I work with</p>
       </div>
     </div>
   </section>
@@ -718,14 +755,18 @@
       <div class="section-title text-center">
         <h2>Technical <span>Expertise</span></h2>
       </div>
-      <div class="skills-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+      <div class="skills-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center;">
         <div class="fade-in">
+          <p class="subtitle">Where I <span style="font-weight: bold;">Excel</span></p>
           <p>
             With a strong foundation in computer science and hands-on experience across the
             development lifecycle, I bridge the gap between software development and operations.
             My skills span from writing clean, efficient code to automating infrastructure
             and optimizing deployment pipelines.
           </p>
+
+          <p><strong class="subtitle"><span style="font-weight: bold;">Key Skills:</span></strong>  DevOps and Backend Development</p>
+
           <p>
             Proactive student at UMT (CGPA 3.87),
             passionate about DevOps, Cloud
@@ -803,10 +844,10 @@
             <div class="skill-item">
               <div class="skill-info">
                 <span class="skill-name">Apache Tomcat</span>
-                <span class="skill-percent">80%</span>
+                <span class="skill-percent">85%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" data-width="80"></div>
+                <div class="skill-progress" data-width="85"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -833,10 +874,19 @@
             <div class="skill-item">
               <div class="skill-info">
                 <span class="skill-name">JavaScript</span>
-                <span class="skill-percent">72%</span>
+                <span class="skill-percent">70%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" data-width="72"></div>
+                <div class="skill-progress" data-width="70"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Express.JS</span>
+                <span class="skill-percent">65%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="65"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -852,11 +902,11 @@
           <div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Database Systems</span>
-                <span class="skill-percent">86%</span>
+                <span class="skill-name">MongoDB</span>
+                <span class="skill-percent">60%</span>
               </div>
               <div class="skill-bar">
-                <div class="skill-progress" data-width="86"></div>
+                <div class="skill-progress" data-width="60"></div>
               </div>
             </div>
             <div class="skill-item">
@@ -882,7 +932,7 @@
           <div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Linux (Debian / Ubuntu)</span>
+                <span class="skill-name">Operating System (Debian / Ubuntu)</span>
                 <span class="skill-percent">80%</span>
               </div>
               <div class="skill-bar">
@@ -911,7 +961,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Agile Methodologies</span>
+                <span class="skill-name">Computer Networking</span>
                 <span class="skill-percent">87%</span>
               </div>
               <div class="skill-bar">
@@ -933,11 +983,11 @@
       </div>
       <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
         <div class="tool-item fade-in">
-          <img src="refrences/project_3.png" alt="AWS">
+          <img src="refrences/aws.svg" alt="AWS">
           <h4>AWS</h4>
         </div>
         <div class="tool-item fade-in delay-1">
-          <img src="refrences/project_2.PNG" alt="Docker">
+          <img src="refrences/docker.svg" alt="Docker">
           <h4>Docker</h4>
         </div>
         <div class="tool-item fade-in delay-2">
@@ -945,11 +995,11 @@
           <h4>Kubernetes</h4>
         </div>
         <div class="tool-item fade-in delay-3">
-          <img src="refrences/terraform.png" alt="Terraform">
+          <img src="refrences/terraform.svg" alt="Terraform">
           <h4>Terraform</h4>
         </div>
         <div class="tool-item fade-in">
-          <img src="refrences/jenkins.png" alt="Jenkins">
+          <img src="refrences/jenkins.svg" alt="Jenkins">
           <h4>Jenkins</h4>
         </div>
         <div class="tool-item fade-in delay-1">
@@ -957,12 +1007,28 @@
           <h4>Cloud Native</h4>
         </div>
         <div class="tool-item fade-in delay-2">
-          <img src="refrences/tomcat.png" alt="Apache Tomcat">
+          <img src="refrences/tomcat.svg" alt="Apache Tomcat">
           <h4>Apache Tomcat</h4>
         </div>
         <div class="tool-item fade-in delay-3">
-          <img src="refrences/git.webp" alt="Git">
-          <h4>Git/Github</h4>
+          <img src="refrences/git.svg" alt="Git">
+          <h4>Git / Github</h4>
+        </div>
+        <div class="tool-item fade-in delay-3">
+          <img src="refrences/node.svg" alt="Node.JS">
+          <h4>Node.JS</h4>
+        </div>
+        <div class="tool-item fade-in delay-3">
+          <img src="refrences/express.svg" alt="Express.JS">
+          <h4>Express.JS</h4>
+        </div>
+        <div class="tool-item fade-in delay-3">
+          <img src="refrences/mongo.svg" alt="MongoDB">
+          <h4>MongoDB</h4>
+        </div>
+        <div class="tool-item fade-in delay-3">
+          <img src="refrences/c++.svg" alt="MongoDB">
+          <h4>C / C++</h4>
         </div>
       </div>
     </div>
@@ -971,13 +1037,14 @@
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
-      <div class="text-center fade-in">
-        <h2>Ready to leverage my skills for your project?</h2>
-        <p>
-          Whether you need DevOps solutions, cloud architecture, or custom software development,
-          I'm here to help bring your ideas to life with technical excellence.
-        </p>
-        <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>Let's Work Together on Your Next Project</h2>
+          <p>I'm available for freelance work and consulting engagements</p>
+        </div>
+        <div class="col-lg-4">
+          <a href="contact.html" class="btn btn-light">Get In Touch</a>
+        </div>
       </div>
     </div>
   </section>
@@ -1003,25 +1070,25 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="skills.html">Skills</a></li>
+            <li><a href="skills.html">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
           </ul>
         </div>
         <div class="footer-services">
           <h4>Services</h4>
           <ul>
-            <li>DevOps</li>
-            <li>Web Development</li>
-            <li>Cloud Solutions</li>
-            <li>Consulting</li>
+            <li>DevOps</a></li>
+            <li>Cloud Infrastructure</li>
+            <li>CI/CD Pipelines</li>
+            <li>Web Development</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h4>Contact</h4>
           <ul style="display: flex; flex-direction: column; gap: 8px;">
-            <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
-            <li><i class="fas fa-phone"></i> +92-308-1036864</li>
             <li><i class="fas fa-envelope"></i> usmansarwar4028@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +92-308-1036864</li>
+            <li><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</li>
           </ul>
         </div>
       </div>
