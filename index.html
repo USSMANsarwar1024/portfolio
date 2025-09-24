@@ -949,6 +949,59 @@
 
       }
     }
+
+    h3>span {
+      display: inline-block;
+      overflow: hidden;
+      height: 1.1em;
+      /* match line height */
+      vertical-align: bottom;
+      color: var(--accent-teal);
+      /* highlight color */
+    }
+
+    h3>span>span {
+      display: block;
+      animation: anim 8s infinite ease-in-out;
+    }
+
+    @keyframes anim {
+      0% {
+        transform: translateY(0%);
+      }
+
+      20% {
+        transform: translateY(0%);
+      }
+
+      25% {
+        transform: translateY(-100%);
+      }
+
+      45% {
+        transform: translateY(-100%);
+      }
+
+      50% {
+        transform: translateY(-200%);
+      }
+
+      70% {
+        transform: translateY(-200%);
+      }
+
+      75% {
+        transform: translateY(-300%);
+      }
+
+      95% {
+        transform: translateY(-300%);
+      }
+
+      100% {
+        transform: translateY(-400%);
+      }
+    }
   </style>
 </head>
 
@@ -983,7 +1036,15 @@
       <div class="hero-content">
         <div class="hero-text">
           <h1>Usman Sarwar</h1>
-          <div class="subtitle">DevOps & Cloud Engineer</div>
+          <h3>
+            I am a
+            <span>
+              <span>DevOps Engineer</span>
+              <span>Backend Developer</span>
+              <span>Reader</span>
+              <span>Muslim</span>
+            </span>
+          </h3>
           <p>I design, build, and maintain highly available, scalable, and secure cloud infrastructure that powers
             modern applications and accelerates business growth.</p>
           <div class="hero-buttons">
